@@ -1,3 +1,15 @@
-node_modules
+# dependencies
+/node_modules
+
 src/services/aws/lib
 src/scss_common
+.DS_Store
+
+# production
+/build
+
+# local env
+ops/config/.env.local
+.env
+
+.idea/

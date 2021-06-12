@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
+import SideBar from './SideBar/SideBar';
+import ToolBar from './ToolBar/ToolBar';
 
-const Home = () => {
-    return (
-        <div><h3>This is Home component</h3></div>
-    );
-};
+const cls = 'home';
+
+class Home extends PureComponent {
+    render() {
+        return (
+            <div className={cls}>
+                <ToolBar />
+                <SideBar />
+            </div>
+        );
+    }
+}
 
 export default Home;

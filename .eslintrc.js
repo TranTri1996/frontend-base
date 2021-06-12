@@ -21,16 +21,6 @@ module.exports = {
     'rules': {
         semi: 2,
         'space-before-blocks': [2, 'always'],
-        'quotes': [2, 'single'],
-        'no-trailing-spaces': 2,
-        'space-infix-ops': 2,
-        'space-before-function-paren': [
-            2,
-            {
-                'named': 'never',
-                'anonymous': 'never',
-                'asyncArrow': 'always'
-            }
-        ],
+        'quotes': [2, 'single']
     }
 };

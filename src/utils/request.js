@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const makeRequest = async ( { url, headers, body, method, params, success, error, statusCode }) => {
     try {
