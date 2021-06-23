@@ -1,14 +1,12 @@
-import React from 'react';
-import {PureComponent} from 'react';
+import React, { useEffect } from 'react';
 
 const cls = 'toolbar';
 
-class ToolBar extends PureComponent {
-    render() {
-        return (
-            <div className={cls}>Test the push rule</div>
-        );
-    }
-}
+const ToolBar = () => {
+  useEffect(() => {
+    window.addEventListener('click', () => console.log('scrolling!!!'));
+  }, []);
+  return (<div className={cls}>Test the push rule</div>);
+};
 
 export default ToolBar;

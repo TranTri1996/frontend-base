@@ -2,7 +2,6 @@ import React from 'react';
 import {PureComponent} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import routeMapping from '../../routes/routeMapping';
-
 const staticRoutes = routeMapping.map((route) => {
     return (
     <Route
@@ -15,16 +14,16 @@ const staticRoutes = routeMapping.map((route) => {
 
 class Main extends PureComponent {
     constructor(props) {
-        super(props);
-        this.routes = [...staticRoutes];
+      super(props);
+      this.routes = [...staticRoutes];
     }
 
     render() {
-       return (
-           <Switch>
-               {this.routes}
-           </Switch>
-       );
+      return (
+          <Switch>
+            {this.routes}
+          </Switch>
+      );
    }
 }
 

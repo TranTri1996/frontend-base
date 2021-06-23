@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "quotes": [2, "single"],
+    "semi": 2,
+    "space-infix-ops": 2,
+    "keyword-spacing": 2,
+    "strict": 0
+  }
+}
