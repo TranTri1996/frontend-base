@@ -1,5 +1,5 @@
 const pagePaths = {
-    HOME: '/'
+  HOME: '/'
 };
 
 export default pagePaths;

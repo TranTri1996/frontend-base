@@ -1,0 +1,19 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    ".{dev,shadowenv.d}": true,
+    "{build,dist}/": true,
+    "examples/*/build": true
+  },
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/node_modules": true,
+    ".{dev,shadowenv.d}": true,
+    "{build,dist}/": true,
+    "examples/*/build": true
+  }
+}
