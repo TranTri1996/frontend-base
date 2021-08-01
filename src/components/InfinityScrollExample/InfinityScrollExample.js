@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import faker from 'faker';
+import Select from 'react-select';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './InfinityScrollExample.scss';
 
@@ -10,6 +11,7 @@ const data = new Array(1000).fill().map(
     body: faker.lorem.sentences(4)
   })
   );
+
 
 const InfinityScrollExample = () => {
   const [hasMore, setHasMore] = useState(true);
@@ -34,14 +36,18 @@ const InfinityScrollExample = () => {
       hasMore={hasMore}
       loader={<h4>Loading...</h4>}
     >
-      <div>
+      {/* <div>
         {currentList.map(((item) => (
           <div key={item.id} className="post">
             <h3>{item.title} - {item.id}</h3>
             <p>{item.body}</p>
           </div>
         )))}
-      </div>
+      </div> */}
+      <Select
+        options={currentList.map(item => ({ label: item.title, value: item }))}
+        isMulti
+      />
     </InfiniteScroll>
   );
 };
