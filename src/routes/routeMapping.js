@@ -1,11 +1,13 @@
-import pagePaths from './pagePaths';
-import Home from '../components/Home';
+import { pagePaths } from 'routes';
+import { Home, ToolBar } from 'components';
 
-const routeMapping = [
+export const routeMapping = [
   {
     path: pagePaths.HOME,
     component: Home
+  },
+  {
+    path: pagePaths.TOOLBAR,
+    component: ToolBar
   }
 ];
-
-export default routeMapping;

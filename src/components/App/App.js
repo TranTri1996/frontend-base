@@ -1,11 +1,9 @@
 import React from 'react';
-import routes from './routes/routes';
+import { routes } from 'routes';
 import './App.scss';
 
-const App = () => {
+export const App = () => {
   return (
     <div className="app-wrapper">{routes}</div>
   );
 };
-
-export default App;

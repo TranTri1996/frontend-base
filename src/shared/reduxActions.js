@@ -1,4 +1,4 @@
-import { makeRequest } from './request';
+import { makeRequest } from 'shared';
 
 const initActionType = (type) => `INIT_${type}`;
 const successActionType = (type) => `SUCCESS_${type}`;
