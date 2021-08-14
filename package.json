@@ -21,13 +21,8 @@
     "build": "npm run env && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "env": "sh ops/config/env.sh"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "env": "sh ops/config/env.sh",
+    "lint": "eslint src --ext .js"
   },
   "browserslist": {
     "production": [

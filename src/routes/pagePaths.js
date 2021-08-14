@@ -1,5 +1,5 @@
-const pagePaths = {
-    HOME: '/'
+export const pagePaths = {
+  HOME: '/',
+  TOOLBAR: '/toolbar'
 };
 
-export default pagePaths;
