@@ -36,10 +36,6 @@
       "pre-commit": "lint-staged && pretty-quick --staged"
     }
   },
-  "pre-commit": [
-    "eslint",
-    // "coverage"
-  ],
   "browserslist": {
     "production": [
       ">0.2%",

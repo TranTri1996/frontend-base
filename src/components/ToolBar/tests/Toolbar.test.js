@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from '@jest/globals';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import { ToolBar } from 'components';
 
 describe('Toolbar component', () => {
