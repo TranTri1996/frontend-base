@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar component should render successful 1`] = `
+<div
+  className="toolbar"
+>
+  This is ToolBar
+</div>
+`;

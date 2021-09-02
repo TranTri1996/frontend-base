@@ -29,6 +29,7 @@ const parseJsonResponse = (response) => {
   }
 };
 
+// eslint-disable-next-line no-unused-vars
 const getRequestParams = ({ method, body, params, headers, options }, state) => {
   const hasJsonBody = !!body;
   const customHeaders = {

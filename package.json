@@ -22,8 +22,24 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "env": "sh ops/config/env.sh",
-    "lint": "eslint src --ext .js"
+    "lint": "eslint src --ext .js,.jsx",
+    "lint-fix": "eslint ./ --fix"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged"
+    }
+  },
+  "pre-commit": [
+    "eslint",
+    // "coverage"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -38,9 +54,24 @@
   },
   "devDependencies": {
     "cors": "^2.8.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-react": "^7.23.2",
-    "express": "^4.17.1"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "express": "^4.17.1",
+    "husky": "^7.0.2",
+    "istanbul-lib-coverage": "^3.0.0",
+    "lint-staged": "^11.1.2",
+    "pre-commit": "^1.2.2",
+    "pretty-quick": "^3.1.1",
+    "react-test-renderer": "^17.0.2"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

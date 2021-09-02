@@ -5,22 +5,23 @@
     "es6": true
   },
   "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
-      "ecmaFeatures": {
-          "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
   },
-  "plugins": [
-      "react", "import"
-  ],
+  "plugins": ["react", "import", "react-hooks"],
   "rules": {
-      "semi": 2,
-      "space-before-blocks": [2, "always"],
-      "quotes": [2, "single"]
+    "semi": 2,
+    "space-before-blocks": [2, "always"],
+    "quotes": [2, "single"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
