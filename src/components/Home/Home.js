@@ -1,13 +1,13 @@
 import React from 'react';
-import { SideBar, ToolBar } from 'components';
+
+import './Home.scss';
 
 const cls = 'home';
 
 export const Home = () => {
   return (
     <div className={cls}>
-      <ToolBar />
-      <SideBar />
+      <h1>This is frontend base project!!!</h1>
     </div>
   );
 };

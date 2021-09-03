@@ -59,6 +59,7 @@ const createAction = (action) => (dispatch, getState) => {
     }
 
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log('Error when create action', error);
   }
 };
@@ -67,6 +68,7 @@ const createAsyncAction = (action) => async (dispatch, getState) => {
   const state = getState();
   const { payload, onSuccess, onError } = action;
   if (!payload || typeof payload.request !== 'string') {
+    // eslint-disable-next-line no-console
     console.log('Error request url is not existed!');
     return false;
   }
@@ -88,6 +90,7 @@ const createAsyncAction = (action) => async (dispatch, getState) => {
 
   } catch (error) {
     if (error.readyState === 0) {
+      // eslint-disable-next-line no-console
       console.log('the internet connection is not good!');
     }
     const response = parseJsonResponse(error.message);

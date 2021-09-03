@@ -20,8 +20,43 @@
   "rules": {
     "semi": 2,
     "space-before-blocks": [2, "always"],
+    "no-trailing-spaces": 2,
+    "no-console": ["error", { "allow": ["error"] }],
+    "no-process-exit": 0,
+    "no-proto": 0,
+    "no-prototype-builtins": 0,
+    "no-redeclare": 0,
+    "no-return-assign": 2,
+    "no-shadow": 0,
     "quotes": [2, "single"],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "object-curly-spacing": [2, "always"],
+    "operator-linebreak": [
+      2,
+      "after",
+      { "overrides": { "?": "before", ":": "before" } }
+    ],
+    "space-infix-ops": 2,
+    "keyword-spacing": 2,
+    "strict": 0,
+    "valid-typeof": 2,
+    "space-before-function-paren": [
+      2,
+      {
+        "named": "never",
+        "anonymous": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "max-len": [
+      1,
+      {
+        "code": 120,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ]
   }
 }

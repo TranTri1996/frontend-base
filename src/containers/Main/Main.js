@@ -1,6 +1,7 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
 import { routeMapping } from 'routes';
+import { Route, Switch } from 'react-router-dom';
+
 
 const staticRoutes = routeMapping.map((route) => {
   return (

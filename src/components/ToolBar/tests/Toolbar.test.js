@@ -5,7 +5,7 @@ import { ToolBar } from 'components';
 
 describe('Toolbar component', () => {
   it('should render successful', () => {
-    const toolbarSnapshot =   renderer.create(<ToolBar />      ).toJSON();
+    const toolbarSnapshot = renderer.create(<ToolBar />).toJSON();
     expect(toolbarSnapshot).toMatchSnapshot();
   });
 });
