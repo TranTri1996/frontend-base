@@ -1,5 +1,5 @@
 {
-  "name": "frontend-sharing-knowledge",
+  "name": "frontend-base",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -33,11 +33,9 @@
     "lint": "eslint src --ext .js,.jsx",
     "lint-fix": "eslint ./ --fix"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+  "pre-commit": [
+    "lint"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -63,6 +61,7 @@
     "husky": "^7.0.2",
     "istanbul-lib-coverage": "^3.0.0",
     "lint-staged": "^11.1.2",
+    "pre-commit": "^1.2.2",
     "pretty-quick": "^3.1.1",
     "react-test-renderer": "^17.0.2"
   },
