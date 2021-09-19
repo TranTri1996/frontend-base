@@ -1,4 +1,4 @@
-import { makeRequest } from 'shared';
+import { callRequest } from 'shared';
 
 const initActionType = (type) => `INIT_${type}`;
 const successActionType = (type) => `SUCCESS_${type}`;
@@ -20,6 +20,7 @@ const getUrlRequest = ({ request }) => {
   // TODO: need more handle
   return request;
 };
+
 const parseJsonResponse = (response) => {
   if (response !== 'string') return {};
   try {
@@ -59,8 +60,7 @@ const createAction = (action) => (dispatch, getState) => {
     }
 
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log('Error when create action', error);
+    console.error('Error when create action', error);
   }
 };
 
@@ -68,44 +68,42 @@ const createAsyncAction = (action) => async (dispatch, getState) => {
   const state = getState();
   const { payload, onSuccess, onError } = action;
   if (!payload || typeof payload.request !== 'string') {
-    // eslint-disable-next-line no-console
-    console.log('Error request url is not existed!');
+    console.error('Error request url is not existed!');
     return false;
   }
-  dispatch(makeRequestAction(payload));
+  dispatch(makeRequestAction(action));
   const { request, method, body, params, options, headers } = payload;
   try {
     const url = getUrlRequest({ request, ...options });
     const paramsForSend = getRequestParams({ method, body, params, headers, options }, state);
-    const response = await makeRequest({ url, ...paramsForSend });
+    const response = await callRequest({ url, ...paramsForSend });
     //TODO: need more validate on response
-
-    if (onSuccess && typeof onSuccess === 'function') {
-      onSuccess(dispatch, getState);
-    }
 
     dispatch(makeSuccessAction(action, response));
 
-    return response;
+    if (onSuccess && typeof onSuccess === 'function') {
+      onSuccess(dispatch, response);
+    }
 
+    return response;
   } catch (error) {
     if (error.readyState === 0) {
-      // eslint-disable-next-line no-console
-      console.log('the internet connection is not good!');
+      console.error('the internet connection is not good!');
     }
-    const response = parseJsonResponse(error.message);
 
+    const errorMessage = parseJsonResponse(error.message);
     if (typeof onError === 'function') {
-      onError(dispatch, response, getState);
+      onError(dispatch, errorMessage, getState);
     }
-
     // TODO: need more handle
     return dispatch(makeFailAction(action));
   }
 };
 
-
 export {
+  initActionType,
+  successActionType,
+  failActionType,
   createAction,
   createAsyncAction
 };

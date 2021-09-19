@@ -1,5 +1,6 @@
 export const pagePaths = {
   HOME: '/',
-  TOOLBAR: '/toolbar'
+  TOOLBAR: '/toolbar',
+  USERS: '/users'
 };
 
