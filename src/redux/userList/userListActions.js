@@ -5,7 +5,7 @@ export const getUserList = () => {
   return createAsyncAction({
     type: GET_USERS,
     payload: {
-      request: 'https://gorest.co.in/public/v1/users',
+      request: 'https://gorest.co.in/public/v1/users', //free online api endpoint
       params: {},
     }
   });

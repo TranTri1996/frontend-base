@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`SideBar component should render successful 1`] = `
-<div
-  className="sidebar"
->
-  This is sidebar
-</div>
-`;
